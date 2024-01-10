@@ -1,4 +1,7 @@
+import { IGetIdolRelated } from "../Components/ProfileIdol/IGetRelated";
 import { IGetIdol } from "../Interfaces/Interfaces.api";
+import { Mock_companys } from "./Companys";
+import { Mock_groups } from "./Groups";
 
 export const Mock_idols: IGetIdol[] = [
   {
@@ -1406,3 +1409,18 @@ export const Mock_idols: IGetIdol[] = [
     }
   }
 ]
+export function findOneIdol(id: number): IGetIdol {
+  return Mock_idols.find(idol => idol.id === id)
+}
+export function relatedIdol(id: number): IGetIdolRelated {
+  const AtualIdol = Mock_idols.find(idol => idol.id === id);
+
+  const groupRelated = Mock_groups.filter(group => group.id === AtualIdol?.groupId);
+
+  const companyRelated = Mock_companys.filter(company => company.id === AtualIdol?.companyId);
+
+  const idolsFromGroupRelated = Mock_idols.filter(idol => idol.groupId === groupRelated[0]?.id && idol.id !== AtualIdol?.id);
+
+  return { company: companyRelated[0], group: {...groupRelated[0], idols: idolsFromGroupRelated}, solist: false };
+}
+

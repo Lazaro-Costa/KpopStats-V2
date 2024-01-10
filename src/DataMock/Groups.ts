@@ -1320,7 +1320,7 @@ export const Mock_groups: IGetGroups[] =
       ]
     }
   ]
-export function findOne(id: number): IGetGroups {
+export function findOneGroup(id: number): IGetGroups {
     return Mock_groups.find(group => group.id === id)
 }
 export function relatedGroup(id: number): IGetRelatedGroup {
@@ -1331,4 +1331,3 @@ export function relatedGroup(id: number): IGetRelatedGroup {
       ...AtualGroup, idols: idolsRelated, company: companysRelated[0]
     }
 }
-console.log(JSON.stringify(relatedGroup(1), null, 2))

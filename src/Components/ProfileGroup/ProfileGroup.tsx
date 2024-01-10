@@ -12,7 +12,7 @@ import { IGetRelatedGroup } from './RelatedGroup/IGetRelatedGroup';
 import { dateToString } from '../../utils/dateToString';
 import AuxImage from '../ImageModal/AuxImage';
 import converterStringParaObjeto from '../../utils/stringToObject';
-import { findOne, relatedGroup } from '../../DataMock/Groups';
+import { findOneGroup, relatedGroup } from '../../DataMock/Groups';
 
 const ProfileGroups = () => {
   const { id } = useParams();
@@ -32,7 +32,7 @@ const ProfileGroups = () => {
   }
 
   React.useEffect(() => {
-    const group = findOne(Number(id));
+    const group = findOneGroup(Number(id));
     setData(group as IGetGroups);
 
     setInfo(convertToInfo(group as IGetGroups) as InfoGroups);
