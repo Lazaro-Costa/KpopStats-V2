@@ -6,8 +6,8 @@ export interface ICreatePic{
 }
 export interface IGetPic{
     id: number
-    createdAt: string
-    updatedAt: string
+    createdAt?: string
+    updatedAt?: string
     name: string
     profiles: Profile[]
     banners: Banner[]
@@ -109,7 +109,7 @@ export interface IGetGroups {
   companyId: number
   picsId: number
   company: Pick<IGetCompanys, 'id' | 'name'>
-  pictures: IGetPic
+  pictures: Partial<IGetPic>
   idols: IGetIdol[]
 }
 
@@ -127,8 +127,8 @@ export interface IGetIdol {
   companyId: number
   groupId: number
   picsId: number
-  company: Pick<IGetCompanys, 'id' | 'name'>
-  group: Pick<IGetGroups, 'id' | 'name'>
+  company?: Pick<IGetCompanys, 'id' | 'name'>
+  group?: Pick<IGetGroups, 'id' | 'name'>
   pictures: IGetPic
 }
 export interface Root {
