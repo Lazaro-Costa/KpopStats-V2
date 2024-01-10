@@ -1,6 +1,5 @@
 import React from 'react';
 import Loading from '../Loading/Loading';
-import { apiBase } from '../Helper/Variables';
 import { useParams } from 'react-router-dom';
 import { PG } from '../ProfileGroup/utils';
 import Head from '../Helper/Head';
@@ -13,6 +12,7 @@ import { IGetCompanyRelated } from '../ProfileIdol/IGetRelated';
 import { dateToString } from '../../utils/dateToString';
 import AuxImage from '../ImageModal/AuxImage';
 import converterStringParaObjeto from '../../utils/stringToObject';
+import { findOneCompany, relatedCompany } from '../../DataMock/Companys';
 
 type IGetCompanyProfile = {
   Name: string;
@@ -41,18 +41,11 @@ const ProfileCompany = () => {
   }
 
   React.useEffect(() => {
-    Promise.all([
-      fetch(`${apiBase}/companys/find/${id}`).then(res => res.json()),
-      fetch(`${apiBase}/companys/related/${id}`).then(res => res.json()),
-    ])
-      .then(([CompanyData, relatedData]) => {
-        setData(CompanyData as IGetCompanys);
-        setInfo(convertToInfo(CompanyData as IGetCompanys));
-        setRelated(relatedData as IGetCompanyRelated);
-      })
-      .catch(err => {
-        console.error('Error fetching data:', err);
-      });
+    const companyData = findOneCompany(+id);
+    setData(companyData);
+    setInfo(convertToInfo(companyData));
+
+    setRelated(relatedCompany(+id));
   }, []);
 
   if (!data.name)

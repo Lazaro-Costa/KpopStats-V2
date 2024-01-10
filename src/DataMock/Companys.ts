@@ -1,4 +1,6 @@
+import { IGetCompanyRelated } from "../Components/ProfileIdol/IGetRelated";
 import { IGetCompanys } from "../Interfaces/Interfaces.api";
+import { Mock_groups } from "./Groups";
 
 export const Mock_companys: IGetCompanys[] = [
   {
@@ -110,3 +112,10 @@ export const Mock_companys: IGetCompanys[] = [
     }
   }
 ]
+export function findOneCompany(id: number): IGetCompanys {
+  return Mock_companys.find(company => company.id === id) as IGetCompanys
+}
+export function relatedCompany(id: number): IGetCompanyRelated {
+  const groupsRelated = Mock_groups.filter(group => group.companyId === id);
+  return { groups: groupsRelated }
+}
