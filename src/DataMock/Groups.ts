@@ -1,4 +1,7 @@
+import { IGetRelatedGroup } from "../Components/ProfileGroup/RelatedGroup/IGetRelatedGroup";
 import { IGetGroups } from "../Interfaces/Interfaces.api";
+import { Mock_companys } from "./Companys";
+import { Mock_idols } from "./Idols";
 
 export const Mock_groups: IGetGroups[] =
   [
@@ -1317,3 +1320,15 @@ export const Mock_groups: IGetGroups[] =
       ]
     }
   ]
+export function findOne(id: number): IGetGroups {
+    return Mock_groups.find(group => group.id === id)
+}
+export function relatedGroup(id: number): IGetRelatedGroup {
+    const AtualGroup = Mock_groups.find(group => group.id === id)
+    const idolsRelated = Mock_idols.filter(idol => idol.groupId === id)
+    const companysRelated = Mock_companys.filter(company => company.id === AtualGroup.companyId)
+    return {
+      ...AtualGroup, idols: idolsRelated, company: companysRelated[0]
+    }
+}
+console.log(JSON.stringify(relatedGroup(1), null, 2))

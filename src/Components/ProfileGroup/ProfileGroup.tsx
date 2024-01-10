@@ -4,7 +4,6 @@ import PG_Container from './utils/PG_Container';
 import { useParams } from 'react-router-dom';
 import { IGetGroups, InfoGroups } from '../../Interfaces/Interfaces.api';
 import IsGroup from './ObjectInfo/IsGroup';
-import { apiBase } from '../Helper/Variables';
 import Head from '../Helper/Head';
 import Loading from '../Loading/Loading';
 import CardProvider from '../Card/CardProvider/CardProvider';
@@ -13,6 +12,7 @@ import { IGetRelatedGroup } from './RelatedGroup/IGetRelatedGroup';
 import { dateToString } from '../../utils/dateToString';
 import AuxImage from '../ImageModal/AuxImage';
 import converterStringParaObjeto from '../../utils/stringToObject';
+import { findOne, relatedGroup } from '../../DataMock/Groups';
 
 const ProfileGroups = () => {
   const { id } = useParams();
@@ -32,19 +32,11 @@ const ProfileGroups = () => {
   }
 
   React.useEffect(() => {
-    Promise.all([
-      fetch(`${apiBase}/groups/find/${id}`).then(res => res.json()),
-      fetch(`${apiBase}/groups/related/${id}`).then(res => res.json()),
-    ])
-      .then(([idolData, relatedData]) => {
-        setData(idolData as IGetGroups);
-        setInfo(convertToInfo(idolData));
-        setRelated(relatedData as IGetRelatedGroup);
-      })
-      .catch(err => {
-        console.error('Error fetching data:', err);
-        // Tratar o erro de forma apropriada (exibir uma mensagem, fazer um fallback etc.)
-      });
+    const group = findOne(Number(id));
+    setData(group as IGetGroups);
+
+    setInfo(convertToInfo(group as IGetGroups) as InfoGroups);
+    setRelated(relatedGroup(+id));
   }, []);
 
   if (!data.name)
