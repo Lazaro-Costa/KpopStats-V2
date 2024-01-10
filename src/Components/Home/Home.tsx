@@ -30,10 +30,6 @@ const Home = () => {
         </CardProvider>
       ) : (
         <div className='animeLeft'>
-          <div>
-            <div className="self-start w-full flex items-center justify-end m-4 sm:m-2">
-            </div>
-          </div>
           <CardProvider>
             {groupRaw.map(group => {
               return <FlipCard.Root key={`${group.id}`} group={group} />;
