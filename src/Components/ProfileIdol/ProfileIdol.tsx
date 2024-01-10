@@ -1,6 +1,5 @@
 import React from 'react';
 import Loading from '../Loading/Loading';
-import { apiBase } from '../Helper/Variables';
 import { useParams } from 'react-router-dom';
 import { PG } from '../ProfileGroup/utils';
 import Head from '../Helper/Head';
@@ -14,6 +13,7 @@ import { IGetIdolRelated } from './IGetRelated';
 import { IGetIdol } from '../../Interfaces/Interfaces.api';
 import AuxImage from '../ImageModal/AuxImage';
 import converterStringParaObjeto from '../../utils/stringToObject';
+import { findOneIdol, relatedIdol } from '../../DataMock/Idols';
 type InfoIdol = {
   Name: string;
   'Birth name': string;
@@ -39,19 +39,10 @@ const ProfileIdol = () => {
 
 
   React.useEffect(() => {
-    Promise.all([
-      fetch(`${apiBase}/idols/find/${id}`).then(res => res.json()),
-      fetch(`${apiBase}/idols/related/${id}`).then(res => res.json()),
-    ])
-      .then(([idolData, relatedData]) => {
-        setData(idolData as IGetIdol);
-        setInfo(convertToInfo(idolData as IGetIdol));
-        setRelated(relatedData as IGetIdolRelated);
-      })
-      .catch(err => {
-        console.error('Error fetching data:', err);
-        // Tratar o erro de forma apropriada (exibir uma mensagem, fazer um fallback etc.)
-      });
+    const idolData = findOneIdol(+id);
+    setData(idolData);
+    setInfo(convertToInfo(idolData));
+    setRelated(relatedIdol(+id));
   }, []);
 
   if (!data.name)

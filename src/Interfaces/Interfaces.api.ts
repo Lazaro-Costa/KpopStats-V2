@@ -42,14 +42,17 @@ export interface ICreateCompany{
   urls_profile?: ICreateProfile['url']
 }
 export interface IGetCompanys{
-  name: string
   id: number
+  createdAt: string
+  updatedAt: string
+  name: string
   ceo: string
   headquarters: string
   founding_date: string
   more_info: string
   picsId: number
   pictures: IGetPic
+  groups?: Partial<IGetGroups[]>
 }
 export interface ICreateGroup{
   id?:number
@@ -109,7 +112,7 @@ export interface IGetGroups {
   companyId: number
   picsId: number
   company: Pick<IGetCompanys, 'id' | 'name'>
-  pictures: Partial<IGetPic>
+  pictures: IGetPic
   idols: IGetIdol[]
 }
 

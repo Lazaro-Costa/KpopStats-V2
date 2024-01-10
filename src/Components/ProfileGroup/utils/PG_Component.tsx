@@ -3,7 +3,7 @@ import style from './CSS/PG_Component.module.css'
 
 const PG_Component = ({children} : {children: React.ReactNode}) => {
   return (
-    <div className={style.container}>
+    <div className={style.container + ' animeLeft'}>
       {children}
     </div>
   )
