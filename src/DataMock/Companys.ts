@@ -110,6 +110,33 @@ export const Mock_companys: IGetCompanys[] = [
         }
       ]
     }
+  },
+  {
+    id: 5,
+    createdAt: "2024-01-26T11:50:12.595Z",
+    updatedAt: "2024-01-26T11:50:12.595Z",
+    name: "Source Music",
+    founding_date: "2009-11-17T00:00:00.000Z",
+    headquarters: "Seul, South Korea",
+    ceo: "So Sung Jin",
+    more_info: "Trivia: On July 28, 2019, it was announced that Big Hit Entertainment had acquired Source Music, and therefore would become a HYBE subsidiary_Type: Subsidiary_Parent: HYBE",
+    picsId: 48,
+    pictures: {
+      id: 48,
+      name: "PICS_Source Music",
+      banners: [
+        {
+          id: 49,
+          url: "https://i.pinimg.com/564x/86/b1/68/86b168d88a1b93d05dfa060c74e219bc.jpg"
+        }
+      ],
+      profiles: [
+        {
+          id: 48,
+          url: "https://i.pinimg.com/564x/40/a7/1c/40a71c02211750469acfc9ba81bbf453.jpg"
+        }
+      ]
+    }
   }
 ]
 export function findOneCompany(id: number): IGetCompanys {

@@ -14,6 +14,7 @@ import { IGetIdol } from '../../Interfaces/Interfaces.api';
 import AuxImage from '../ImageModal/AuxImage';
 import converterStringParaObjeto from '../../utils/stringToObject';
 import { findOneIdol, relatedIdol } from '../../DataMock/Idols';
+import getAge from '../../utils/getAge';
 type InfoIdol = {
   Name: string;
   'Birth name': string;
@@ -31,7 +32,7 @@ const ProfileIdol = () => {
     return {
       Name: data.name,
       'Birth name': data.korean_name,
-      'Birth date': dateToString(data.date_birth),
+      'Birth date': dateToString(data.date_birth) + ` (age ${getAge(data.date_birth)})`,
       'Foreign name': data.foreign_name ? data.foreign_name : 'N/A',
       'Birth place': data.nationality ? data.nationality : 'N/A',
     };

@@ -5,45 +5,6 @@ import { Mock_groups } from "./Groups";
 
 export const Mock_idols: IGetIdol[] = [
   {
-    id: 1,
-    createdAt: "2023-12-06T12:55:04.440Z",
-    updatedAt: "2023-12-27T13:58:50.009Z",
-    name: "Yeji",
-    korean_name: "Hwang Ye-ji",
-    foreign_name: "Lucy Hwang",
-    nationality: "Korean",
-    date_birth: "1999-04-25T00:00:00.000Z",
-    solist: false,
-    more_info: "Nickname: Yeddong",
-    companyId: 1,
-    groupId: 1,
-    picsId: 3,
-    company: {
-      id: 1,
-      name: "JYP Entertainment"
-    },
-    group: {
-      id: 1,
-      name: "ITZY"
-    },
-    pictures: {
-      id: 3,
-      name: "PICS_Yeji",
-      banners: [
-        {
-          id: 3,
-          url: "https://i.pinimg.com/736x/80/b4/78/80b4785ebdeb581ee11137cacb4bb56a.jpg"
-        }
-      ],
-      profiles: [
-        {
-          id: 3,
-          url: "https://i.pinimg.com/564x/db/54/81/db5481c1367fae9eda202b91fe8d807b.jpg"
-        }
-      ]
-    }
-  },
-  {
     id: 2,
     createdAt: "2023-12-08T12:27:19.806Z",
     updatedAt: "2023-12-08T12:27:19.806Z",
@@ -546,6 +507,123 @@ export const Mock_idols: IGetIdol[] = [
         {
           id: 18,
           url: "https://i.pinimg.com/564x/0d/87/48/0d87484fc362c002b0dcf812794d4190.jpg"
+        }
+      ]
+    }
+  },
+  {
+    id: 38,
+    createdAt: "2024-01-26T12:23:52.731Z",
+    updatedAt: "2024-01-26T12:23:52.731Z",
+    name: "Kazuha",
+    korean_name: "Nakamura Kazuha",
+    foreign_name: "",
+    nationality: " Kochi City, Kochi Prefecture, Japan",
+    date_birth: "2003-08-09T00:00:00.000Z",
+    solist: false,
+    more_info: "Trivia: She was a Silver medalist at the Asian Grand Prix Competition - Junior's Division 2018 (ballet)_Height: 170cm_Hometown: Osaka, Japan",
+    companyId: 5,
+    groupId: 7,
+    picsId: 51,
+    company: {
+      id: 5,
+      name: "Source Music"
+    },
+    group: {
+      id: 7,
+      name: "LE SSERAFIM"
+    },
+    pictures: {
+      id: 51,
+      name: "PICS_Kazuha",
+      banners: [
+        {
+          id: 52,
+          url: "https://i.pinimg.com/564x/4b/1c/aa/4b1caa5f8ef7b5f06486ce816cddb411.jpg"
+        }
+      ],
+      profiles: [
+        {
+          id: 51,
+          url: "https://i.pinimg.com/564x/46/65/50/466550d364321176c94b833b7e853d12.jpg"
+        }
+      ]
+    }
+  },
+  {
+    id: 39,
+    createdAt: "2024-01-26T14:06:09.907Z",
+    updatedAt: "2024-01-26T14:06:09.907Z",
+    name: "Sakura",
+    korean_name: "Miyawaki Sakura",
+    foreign_name: "",
+    nationality: "Kagoshima City, Kagoshima, Japan",
+    date_birth: "1998-03-19T00:00:00.000Z",
+    solist: false,
+    more_info: "Height: 163cm_Trivia: Ex IZ*One member_-:She started her career at age 12_-:She had a YouTube channel where she used to post gameplays of different games",
+    companyId: 5,
+    groupId: 7,
+    picsId: 52,
+    company: {
+      id: 5,
+      name: "Source Music"
+    },
+    group: {
+      id: 7,
+      name: "LE SSERAFIM"
+    },
+    pictures: {
+      id: 52,
+      name: "PICS_Sakura",
+      banners: [
+        {
+          id: 53,
+          url: "https://i.pinimg.com/564x/b7/aa/09/b7aa0981fb560cd977e8cfd89feb83c6.jpg"
+        }
+      ],
+      profiles: [
+        {
+          id: 52,
+          url: "https://i.pinimg.com/564x/2b/e4/f7/2be4f7d70c57c8257dc6445e958a16d5.jpg"
+        }
+      ]
+    }
+  },
+  {
+    id: 1,
+    createdAt: "2023-12-06T12:55:04.440Z",
+    updatedAt: "2023-12-27T13:58:50.009Z",
+    name: "Yeji",
+    korean_name: "Hwang Ye-ji",
+    foreign_name: "Lucy Hwang",
+    nationality: "Korean",
+    date_birth: "1999-04-25T00:00:00.000Z",
+    solist: false,
+    more_info: "Nickname: Yeddong",
+    companyId: 1,
+    groupId: 1,
+    picsId: 3,
+    company: {
+      id: 1,
+      name: "JYP Entertainment"
+    },
+    group: {
+      id: 1,
+      name: "ITZY"
+    },
+    pictures: {
+      id: 3,
+      name: "PICS_Yeji",
+      banners: [
+        {
+          id: 3,
+          url: "https://i.pinimg.com/736x/80/b4/78/80b4785ebdeb581ee11137cacb4bb56a.jpg"
+        }
+      ],
+      profiles: [
+        {
+          id: 3,
+          url: "https://i.pinimg.com/564x/db/54/81/db5481c1367fae9eda202b91fe8d807b.jpg"
         }
       ]
     }
@@ -1404,6 +1482,123 @@ export const Mock_idols: IGetIdol[] = [
         {
           id: 47,
           url: "https://i.pinimg.com/564x/ad/40/6b/ad406b9434e83a1c8f20fb96bbf384f1.jpg"
+        }
+      ]
+    }
+  },
+  {
+    id: 40,
+    createdAt: "2024-01-26T14:17:11.270Z",
+    updatedAt: "2024-01-26T14:24:33.914Z",
+    name: "Chaewon",
+    korean_name: "Kim Chae-won",
+    foreign_name: "Anna Kim",
+    nationality: "Gaepo-dong, Gangnam-gu, Seoul, South Korea",
+    date_birth: "2000-08-01T00:00:00.000Z",
+    solist: false,
+    more_info: "Height: 163.9cm_Nickname: Pupu_Trivia: Ex IZ*One member_-: Angry Issues_-: She has a mole on her left thigh",
+    companyId: 5,
+    groupId: 7,
+    picsId: 53,
+    company: {
+      id: 5,
+      name: "Source Music"
+    },
+    group: {
+      id: 7,
+      name: "LE SSERAFIM"
+    },
+    pictures: {
+      id: 53,
+      name: "PICS_Chaewon",
+      banners: [
+        {
+          id: 54,
+          url: "https://i.pinimg.com/564x/06/c3/93/06c393c0a91c15861537f8a24c8379ba.jpg"
+        }
+      ],
+      profiles: [
+        {
+          id: 53,
+          url: "https://i.pinimg.com/564x/4a/2f/b9/4a2fb9a050b86d31f7dad8c6183e1d6e.jpg"
+        }
+      ]
+    }
+  },
+  {
+    id: 41,
+    createdAt: "2024-01-26T14:31:55.076Z",
+    updatedAt: "2024-01-26T14:31:55.076Z",
+    name: "Yunjin",
+    korean_name: "Huh Yun-jin",
+    foreign_name: "Jennifer Huh",
+    nationality: "rwon-dong, Gangnam-gu, Seoul, South Korea",
+    date_birth: "2001-10-08T00:00:00.000Z",
+    solist: false,
+    more_info: "Height: 172cm_Hometown:  Niskayuna, New York, United States_Trivia: She was an opera singer._-: She can play Ukulele._-: Yunjin studied French for 5 years.",
+    companyId: 5,
+    groupId: 7,
+    picsId: 54,
+    company: {
+      id: 5,
+      name: "Source Music"
+    },
+    group: {
+      id: 7,
+      name: "LE SSERAFIM"
+    },
+    pictures: {
+      id: 54,
+      name: "PICS_Yunjin",
+      banners: [
+        {
+          id: 55,
+          url: "https://i.pinimg.com/564x/5f/3a/cb/5f3acb2bca3bb542c58ad64c23a38466.jpg"
+        }
+      ],
+      profiles: [
+        {
+          id: 54,
+          url: "https://i.pinimg.com/564x/2f/83/9d/2f839d4927d2be7045fc563c267db209.jpg"
+        }
+      ]
+    }
+  },
+  {
+    id: 37,
+    createdAt: "2024-01-26T12:13:04.905Z",
+    updatedAt: "2024-01-26T14:33:19.987Z",
+    name: "Eunchae",
+    korean_name: "Hong Eun-chae ",
+    foreign_name: "Eve Hong",
+    nationality: "Seongsu-dong, Seongdong-gu, Seoul, South Korea",
+    date_birth: "2006-11-10T00:00:00.000Z",
+    solist: false,
+    more_info: "Nickname: Manchae, Smile Potato_Height: 170cm_Tivia: On KBS YouTube, Eunchae presents \"Eunchae's Star Diary\"_-: She was also an MC for Music Bank together with Chaemin",
+    companyId: 5,
+    groupId: 7,
+    picsId: 50,
+    company: {
+      id: 5,
+      name: "Source Music"
+    },
+    group: {
+      id: 7,
+      name: "LE SSERAFIM"
+    },
+    pictures: {
+      id: 50,
+      name: "PICS_Hong Eunchae",
+      banners: [
+        {
+          id: 51,
+          url: "https://i.pinimg.com/564x/74/cb/d3/74cbd3e9da79d0460b46c1bc4ab7c277.jpg"
+        }
+      ],
+      profiles: [
+        {
+          id: 50,
+          url: "https://i.pinimg.com/736x/51/a1/70/51a170f7a2c9d647b59bf3a83e55d288.jpg"
         }
       ]
     }
